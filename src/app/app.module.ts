@@ -20,6 +20,8 @@ import { ContactComponent } from './contact/contact.component';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from "./services/promotion.service";
+import {LeaderService} from "./services/leader.service";
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { PromotionService } from "./services/promotion.service";
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -40,10 +43,15 @@ import { PromotionService } from "./services/promotion.service";
 	  BrowserAnimationsModule,
 	  MaterialModule,
 	  FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [DishService,
-              PromotionService],
-  bootstrap: [AppComponent]
+              PromotionService,
+              LeaderService],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    LoginComponent
+  ]
 })
 export class AppModule { }
